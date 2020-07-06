@@ -3,19 +3,23 @@
 There are a variety of reasons you might not get good quality output from Tesseract. It's important to note that, unless you're using a very unusual font or a new language, retraining Tesseract is unlikely to help.
 
 
-* [Image processing](#image-processing)
-  * [Rescaling](#rescaling)
-  * [Binarisation](#binarisation)
-  * [Noise Removal](#noise-removal)
-  * [Dilation / Erosion](#dilation-and-erosion)
-  * [Rotation / Deskewing](#rotation--deskewing)
-  * [Borders](#Borders)
-  * [Transparency / Alpha channel](#transparency--alpha-channel)
-  * [Tools / Libraries](#tools--libraries)
-  * [Examples](#examples)
-* [Page segmentation method](#page-segmentation-method)
-* [Dictionaries, word lists, and patterns](#dictionaries-word-lists-and-patterns)
-* [Still having problems?](#still-having-problems)
+- [Improving the quality of the output](#improving-the-quality-of-the-output)
+  - [Image processing](#image-processing)
+    - [Inverting images](#inverting-images)
+    - [Rescaling](#rescaling)
+    - [Binarisation](#binarisation)
+    - [Noise Removal](#noise-removal)
+    - [Dilation and Erosion](#dilation-and-erosion)
+    - [Rotation / Deskewing](#rotation--deskewing)
+    - [Borders](#borders)
+      - [Scanning border Removal](#scanning-border-removal)
+      - [Missing borders](#missing-borders)
+    - [Transparency / Alpha channel](#transparency--alpha-channel)
+    - [Tools / Libraries](#tools--libraries)
+    - [Examples](#examples)
+  - [Page segmentation method](#page-segmentation-method)
+  - [Dictionaries, word lists, and patterns](#dictionaries-word-lists-and-patterns)
+  - [Still having problems?](#still-having-problems)
 
 
 ## Image processing
@@ -57,10 +61,14 @@ Heavy ink bleeding from historical documents can be compensated for by using an 
 
 For example, GIMP's Value Propagate filter can create Erosion of extra bold historical fonts by reducing the Lower threshold value.
 
-Original: (Erosion_original.jpg)
+Original:
+
+![Erosion_original.png](Erosion_original.png)
 
 
-Erosion applied: (Erosion_applied.jpg)
+Erosion applied:
+
+![Erosion_applied.png](Erosion_applied.png)
 
 
 ### Rotation / Deskewing
